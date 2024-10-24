@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Trip List</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let trip of trips" (click)="goToTripDetail(trip.id)">
+      <div class="card mb-4 shadow-sm" style="cursor: pointer;">
+        <img src="https://th.bing.com/th/id/R.ade8f0fba3236a405b1496049172e746?rik=4iGSBo7MoTXz7Q&pid=ImgRaw&r=0" class="card-img-top" alt="{{ trip.destination }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ trip.destination }}</h5>
+          <p class="card-text">Departure Date: {{ trip.departureDate ? trip.departureDate : 'N/A' }}</p>
+          <p class="card-text">Price: {{ trip.price }} €</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

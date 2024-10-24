@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <h2>Trip Details</h2>
+  <div *ngIf="trip" class="card shadow-sm p-4">
+    <div class="card-body">
+      <h3 class="card-title">{{ trip.destination }}</h3>
+      <p class="card-text"><strong>Departure Date:</strong> {{ trip.departureDate ? trip.departureDate : 'N/A' }}</p>
+      <p class="card-text"><strong>Price:</strong> {{ trip.price }} €</p>
+      <!-- Add more fields as necessary -->
+
+      <div class="mt-3">
+        <button class="btn btn-primary mr-2" (click)="updateTrip()">Update Trip</button>
+        <button class="btn btn-danger" (click)="deleteTrip()">Delete Trip</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="!trip" class="text-center">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <p>Loading trip details...</p>
+  </div>
+</div>
